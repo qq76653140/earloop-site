@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EarLoop — Bring Languages Into Everyday Life</title>
+<meta name="description" content="EarLoop is a multilingual listening app: 8,028 sentences from real-life scenes, looping in English, Japanese and Chinese, so your ears learn in the spare moments of your day.">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="alternate" hreflang="zh" href="https://earloop.app/">
+<link rel="alternate" hreflang="ja" href="https://earloop.app/ja/">
+<link rel="alternate" hreflang="en" href="https://earloop.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://earloop.app/">
+<meta property="og:title" content="EarLoop">
+<meta property="og:description" content="8,028 real-life sentences, looping in three languages. Bring languages into everyday life.">
+<meta property="og:image" content="https://earloop.app/assets/shark-full.png">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #141D2E; --navy2: #2A3B5A; --ink: #17233B; --sub: #5C6B84;
+    --bg: #F5F7FA; --line: #E3E9F2; --teal: #0E9594; --teal-deep: #0B7A79;
+    --amber: #D97706; --amber-soft: #FEF3C7;
+  }
+  body { font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; color: var(--ink); background: var(--bg); line-height: 1.7; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  header { background: var(--navy); color: #F2F6FC; }
+  .nav { display: flex; align-items: center; gap: 12px; padding: 16px 0; }
+  .nav img.logo { width: 38px; height: 38px; border-radius: 9px; }
+  .nav .brand { font-size: 20px; font-weight: 700; letter-spacing: .3px; }
+  .nav .brand small { font-weight: 400; font-size: 13px; color: #A5B2C8; margin-left: 8px; }
+  .nav nav { margin-left: auto; display: flex; gap: 26px; font-size: 15px; color: #C9D4E6; }
+  .nav nav a:hover { color: #fff; }
+  .lang-switch { margin-left: 22px; font-size: 13.5px; color: #8494AC; white-space: nowrap; }
+  .lang-switch a:hover { color: #fff; }
+  .lang-switch a.cur { color: #fff; font-weight: 700; }
+  .lang-switch .sep { margin: 0 6px; color: #4A5B7A; }
+
+  .hero { background: var(--navy2); color: #F2F6FC; }
+  .hero .wrap { display: flex; align-items: center; gap: 48px; padding: 64px 24px 72px; }
+  .hero-text { flex: 1 1 52%; }
+  .hero h1 { font-size: 42px; line-height: 1.3; font-weight: 800; }
+  .hero h1 .hl { color: #2DD4BF; }
+  .hero p.lead { margin-top: 20px; font-size: 17px; color: #C9D4E6; max-width: 30em; }
+  .hero .cta { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn { display: inline-block; padding: 12px 26px; border-radius: 999px; font-size: 16px; font-weight: 600; }
+  .btn-primary { background: #2DD4BF; color: #06231F; }
+  .btn-ghost { border: 1.5px solid #7186A3; color: #E6EDF7; }
+  .hero .soon { margin-top: 16px; font-size: 13.5px; color: #93A5C0; }
+  .hero-art { flex: 1 1 48%; text-align: center; }
+  .hero-art img { width: 100%; max-width: 460px; display: block; margin: 0 auto; }
+
+  section { padding: 72px 0; }
+  section h2 { font-size: 30px; font-weight: 800; text-align: center; }
+  section .sec-sub { text-align: center; color: var(--sub); margin-top: 10px; font-size: 15.5px; }
+  .cards { margin-top: 44px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 26px 22px; }
+  .card .ico { font-size: 26px; }
+  .card h3 { font-size: 17.5px; margin: 12px 0 8px; }
+  .card p { font-size: 14.5px; color: var(--sub); }
+  .card .num { font-size: 26px; font-weight: 800; color: var(--teal-deep); }
+
+  .how { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .loop { margin: 40px auto 0; max-width: 760px; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .chip { padding: 12px 22px; border-radius: 999px; font-weight: 700; font-size: 16px; }
+  .chip.en { background: #E2F4F3; color: var(--teal-deep); }
+  .chip.zh { background: var(--amber-soft); color: #92400E; }
+  .chip.next { background: var(--bg); color: var(--sub); border: 1px dashed #B9C6D8; }
+  .arrow { color: #B9C6D8; font-size: 20px; font-weight: 700; }
+  .steps { margin: 44px auto 0; max-width: 860px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .step { text-align: center; padding: 0 10px; }
+  .step .n { width: 34px; height: 34px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; }
+  .step h3 { font-size: 16.5px; margin: 12px 0 6px; }
+  .step p { font-size: 14.5px; color: var(--sub); }
+
+  .download { background: var(--navy); color: #F2F6FC; }
+  .download h2 { color: #fff; }
+  .download .sec-sub { color: #A5B2C8; }
+  .qr-row { margin-top: 44px; display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; }
+  .qr-card { background: #fff; color: var(--ink); border-radius: 20px; padding: 28px 34px; text-align: center; width: 250px; }
+  .qr-card img { width: 148px; height: 148px; }
+  .qr-card h3 { font-size: 17px; margin-top: 14px; }
+  .qr-card p { font-size: 13.5px; color: var(--sub); margin-top: 4px; }
+  .badge { display: inline-block; margin-top: 12px; padding: 3px 12px; border-radius: 999px; background: var(--amber-soft); color: #92400E; font-size: 12.5px; font-weight: 700; }
+
+  footer { background: var(--navy); color: #8494AC; border-top: 1px solid #2E3E5C; padding: 30px 0 38px; font-size: 14px; }
+  footer .wrap { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+  footer a { color: #C9D4E6; }
+  footer .right { margin-left: auto; }
+
+  @media (max-width: 860px) {
+    .hero .wrap { flex-direction: column; padding: 44px 24px 56px; gap: 36px; }
+    .hero h1 { font-size: 32px; }
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: 1fr; gap: 26px; }
+    .nav nav { display: none; }
+    .lang-switch { margin-left: auto; }
+  }
+  @media (max-width: 520px) { .cards { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <img class="logo" src="../assets/icon-bust.png" alt="EarLoop">
+    <div class="brand">EarLoop<small>listening, on loop</small></div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#download">Download</a>
+      <a href="privacy/">Privacy Policy</a>
+    </nav>
+    <div class="lang-switch"><a href="/" data-lang="zh">中文</a><span class="sep">·</span><a href="/ja/" data-lang="ja">日本語</a><span class="sep">·</span><a href="/en/" data-lang="en" class="cur">English</a></div>
+<script>document.querySelectorAll('.lang-switch a').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('el-lang',a.dataset.lang)}catch(e){}})});</script>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <h1>Bring languages into everyday life, through your <span class="hl">ears</span>.</h1>
+      <p class="lead">EarLoop is a multilingual listening app. No word lists, no exam pressure — just 8,028 sentences from real-life scenes, looping in English, Japanese and Chinese. On your commute, while cooking, out for a walk: your ears are learning on their own.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#download">Scan to download</a>
+        <a class="btn btn-ghost" href="#features">See the features</a>
+      </div>
+      <p class="soon">iOS & Android · Coming soon</p>
+    </div>
+    <div class="hero-art">
+      <img src="../assets/shark-flat.png" alt="EarLoop mascot: a shark fishing in headphones">
+    </div>
+  </div>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <h2>Made for ear-training</h2>
+    <p class="sec-sub">Listening isn't memorized — it's soaked in. EarLoop makes the soaking effortless.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="num">8,028</div>
+        <h3>Real-life sentences</h3>
+        <p>Daily life, work, travel, school, doctor visits — organized by real scenes, so every sentence you hear is one you'll actually use.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🔁</div>
+        <h3>Trilingual loop</h3>
+        <p>Target language ×2 → your language ×1. Order, repeats, pauses and speed are all yours to arrange; set it once and let it loop.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🎚️</div>
+        <h3>Leveled difficulty</h3>
+        <p>Every set is tagged Beginner / Intermediate / Advanced — from everyday greetings all the way to JLPT N1, at your own pace.</p>
+      </div>
+      <div class="card">
+        <div class="ico">⭐</div>
+        <h3>Favorites & sync</h3>
+        <p>Star any sentence you missed and drill it later. Sign in to sync your progress across devices — a new phone loses nothing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <h2>How ear-training works</h2>
+    <p class="sec-sub">One simple loop: hear the language and guess the meaning, then check it in your own language.</p>
+    <div class="loop">
+      <span class="chip en">Target language ×2</span><span class="arrow">→</span>
+      <span class="chip zh">English ×1</span><span class="arrow">→</span>
+      <span class="chip next">Next sentence</span><span class="arrow">↺</span>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="n">1</span>
+        <h3>Pick a scene</h3>
+        <p>Ordering food, meetings, the train — choose one of 180 sets for today.</p>
+      </div>
+      <div class="step">
+        <span class="n">2</span>
+        <h3>Put your earphones in and loop</h3>
+        <p>Phone in your pocket; the sentences keep playing on their own. No screen needed — your hands and eyes are free.</p>
+      </div>
+      <div class="step">
+        <span class="n">3</span>
+        <h3>Star the stubborn ones</h3>
+        <p>Sentences you just can't catch go into favorites, ready to drill until your ears recognize them on their own.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download" id="download">
+  <div class="wrap">
+    <h2>Download EarLoop</h2>
+    <p class="sec-sub">Scan with your phone to go straight to the download page.</p>
+    <div class="qr-row">
+      <div class="qr-card">
+        <img src="../assets/qr-ios.png" alt="iOS download QR code">
+        <h3>iOS</h3>
+        <p>App Store</p>
+        <span class="badge">Coming soon</span>
+      </div>
+      <div class="qr-card">
+        <img src="../assets/qr-android.png" alt="Android download QR code">
+        <h3>Android</h3>
+        <p>Google Play</p>
+        <span class="badge">Coming soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 EarLoop</span>
+    <a href="privacy/">Privacy Policy</a>
+    <a href="mailto:hi@earloop.app">hi@earloop.app</a>
+    <span class="right">One person, a pair of earphones, slowly understanding a new language.</span>
+  </div>
+</footer>
+
+</body>
+</html>

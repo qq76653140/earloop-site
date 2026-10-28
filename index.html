@@ -3,9 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var p=localStorage.getItem('el-lang');var l=(p||navigator.language||'zh').toLowerCase();if(l.indexOf('ja')===0){location.replace('/ja/')}else if(l.indexOf('en')===0){location.replace('/en/')}}catch(e){}})();</script>
 <title>EarLoop 磨耳朵 — 把外语，听进生活里</title>
 <meta name="description" content="EarLoop（磨耳朵）是一款多语言听力学习 App：8,028 条真实生活场景句，英 / 日 / 中三语循环播放，碎片时间磨出语感。">
 <link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="alternate" hreflang="zh" href="https://earloop.app/">
+<link rel="alternate" hreflang="ja" href="https://earloop.app/ja/">
+<link rel="alternate" hreflang="en" href="https://earloop.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://earloop.app/">
 <meta property="og:title" content="EarLoop 磨耳朵">
 <meta property="og:description" content="8,028 条真实场景句，三语循环播放，把外语听进生活里。">
 <meta property="og:image" content="https://earloop.app/assets/shark-full.png">
@@ -27,6 +32,10 @@
   .nav .brand small { font-weight: 400; font-size: 13px; color: #A5B2C8; margin-left: 8px; }
   .nav nav { margin-left: auto; display: flex; gap: 26px; font-size: 15px; color: #C9D4E6; }
   .nav nav a:hover { color: #fff; }
+  .lang-switch { margin-left: 22px; font-size: 13.5px; color: #8494AC; white-space: nowrap; }
+  .lang-switch a:hover { color: #fff; }
+  .lang-switch a.cur { color: #fff; font-weight: 700; }
+  .lang-switch .sep { margin: 0 6px; color: #4A5B7A; }
 
   .hero { background: var(--navy2); color: #F2F6FC; }
   .hero .wrap { display: flex; align-items: center; gap: 48px; padding: 64px 24px 72px; }
@@ -86,6 +95,7 @@
     .cards { grid-template-columns: repeat(2, 1fr); }
     .steps { grid-template-columns: 1fr; gap: 26px; }
     .nav nav { display: none; }
+    .lang-switch { margin-left: auto; }
   }
   @media (max-width: 520px) { .cards { grid-template-columns: 1fr; } }
 </style>
@@ -94,7 +104,7 @@
 
 <header>
   <div class="wrap nav">
-    <img class="logo" src="assets/icon-bust.png" alt="EarLoop 图标">
+    <img class="logo" src="assets/icon-bust.png" alt="EarLoop">
     <div class="brand">EarLoop<small>磨耳朵</small></div>
     <nav>
       <a href="#features">功能特点</a>
@@ -102,6 +112,8 @@
       <a href="#download">下载</a>
       <a href="privacy/">隐私政策</a>
     </nav>
+    <div class="lang-switch"><a href="/" data-lang="zh" class="cur">中文</a><span class="sep">·</span><a href="/ja/" data-lang="ja">日本語</a><span class="sep">·</span><a href="/en/" data-lang="en">English</a></div>
+<script>document.querySelectorAll('.lang-switch a').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('el-lang',a.dataset.lang)}catch(e){}})});</script>
   </div>
 </header>
 
