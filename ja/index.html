@@ -82,6 +82,8 @@
   .qr-card h3 { font-size: 17px; margin-top: 14px; }
   .qr-card p { font-size: 13.5px; color: var(--sub); margin-top: 4px; }
   .badge { display: inline-block; margin-top: 12px; padding: 3px 12px; border-radius: 999px; background: var(--amber-soft); color: #92400E; font-size: 12.5px; font-weight: 700; }
+  .badge.live { background: #E2F4F3; color: var(--teal-deep); }
+  .qr-card a.dl { display: block; margin-top: 10px; font-size: 14px; font-weight: 700; color: var(--teal-deep); text-decoration: none; }
 
   footer { background: var(--navy); color: #8494AC; border-top: 1px solid #2E3E5C; padding: 30px 0 38px; font-size: 14px; }
   footer .wrap { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
@@ -125,7 +127,7 @@
         <a class="btn btn-primary" href="#download">QRコードでダウンロード</a>
         <a class="btn btn-ghost" href="#features">機能を見てみる</a>
       </div>
-      <p class="soon">iOS / Android 両対応 ・ 近日リリース</p>
+      <p class="soon">iOS 版は App Store で配信中 ・ Android 版は公式サイトからダウンロード</p>
     </div>
     <div class="hero-art">
       <img src="../assets/shark-flat.png" alt="EarLoopのマスコット：ヘッドホンをして釣りをするサメ">
@@ -200,13 +202,15 @@
         <img src="../assets/qr-ios.png" alt="iOS版ダウンロード用QRコード">
         <h3>iOS版</h3>
         <p>App Store</p>
-        <span class="badge">近日リリース</span>
+        <span class="badge live">配信中</span>
+        <a class="dl" href="https://apps.apple.com/app/earloop/id6835780528">App Store で入手 ›</a>
       </div>
       <div class="qr-card">
         <img src="../assets/qr-android.png" alt="Android版ダウンロード用QRコード">
         <h3>Android版</h3>
-        <p>Google Play</p>
-        <span class="badge">近日リリース</span>
+        <p>公式サイト（APK）</p>
+        <span class="badge live">配信中</span>
+        <a class="dl" href="../android/">APK をダウンロード ›</a>
       </div>
     </div>
   </div>

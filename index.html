@@ -83,6 +83,8 @@
   .qr-card h3 { font-size: 17px; margin-top: 14px; }
   .qr-card p { font-size: 13.5px; color: var(--sub); margin-top: 4px; }
   .badge { display: inline-block; margin-top: 12px; padding: 3px 12px; border-radius: 999px; background: var(--amber-soft); color: #92400E; font-size: 12.5px; font-weight: 700; }
+  .badge.live { background: #E2F4F3; color: var(--teal-deep); }
+  .qr-card a.dl { display: block; margin-top: 10px; font-size: 14px; font-weight: 700; color: var(--teal-deep); text-decoration: none; }
 
   footer { background: var(--navy); color: #8494AC; border-top: 1px solid #2E3E5C; padding: 30px 0 38px; font-size: 14px; }
   footer .wrap { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
@@ -126,7 +128,7 @@
         <a class="btn btn-primary" href="#download">扫码下载</a>
         <a class="btn btn-ghost" href="#features">先看看功能</a>
       </div>
-      <p class="soon">iOS / Android 双平台 · 即将上线</p>
+      <p class="soon">iOS 已上架 App Store · Android 官网可下载</p>
     </div>
     <div class="hero-art">
       <img src="assets/shark-flat.png" alt="EarLoop 吉祥物：戴着耳机钓鱼的鲨鱼">
@@ -201,13 +203,15 @@
         <img src="assets/qr-ios.png" alt="iOS 版下载二维码">
         <h3>iOS 版</h3>
         <p>App Store</p>
-        <span class="badge">即将上线</span>
+        <span class="badge live">已上架</span>
+        <a class="dl" href="https://apps.apple.com/app/earloop/id6835780528">App Store 下载 ›</a>
       </div>
       <div class="qr-card">
         <img src="assets/qr-android.png" alt="Android 版下载二维码">
         <h3>Android 版</h3>
-        <p>Google Play</p>
-        <span class="badge">即将上线</span>
+        <p>官网 APK 下载</p>
+        <span class="badge live">官网下载</span>
+        <a class="dl" href="android/">下载 APK ›</a>
       </div>
     </div>
   </div>

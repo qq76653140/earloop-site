@@ -82,6 +82,8 @@
   .qr-card h3 { font-size: 17px; margin-top: 14px; }
   .qr-card p { font-size: 13.5px; color: var(--sub); margin-top: 4px; }
   .badge { display: inline-block; margin-top: 12px; padding: 3px 12px; border-radius: 999px; background: var(--amber-soft); color: #92400E; font-size: 12.5px; font-weight: 700; }
+  .badge.live { background: #E2F4F3; color: var(--teal-deep); }
+  .qr-card a.dl { display: block; margin-top: 10px; font-size: 14px; font-weight: 700; color: var(--teal-deep); text-decoration: none; }
 
   footer { background: var(--navy); color: #8494AC; border-top: 1px solid #2E3E5C; padding: 30px 0 38px; font-size: 14px; }
   footer .wrap { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
@@ -125,7 +127,7 @@
         <a class="btn btn-primary" href="#download">Scan to download</a>
         <a class="btn btn-ghost" href="#features">See the features</a>
       </div>
-      <p class="soon">iOS & Android · Coming soon</p>
+      <p class="soon">iOS now on the App Store · Android via direct download</p>
     </div>
     <div class="hero-art">
       <img src="../assets/shark-flat.png" alt="EarLoop mascot: a shark fishing in headphones">
@@ -200,13 +202,15 @@
         <img src="../assets/qr-ios.png" alt="iOS download QR code">
         <h3>iOS</h3>
         <p>App Store</p>
-        <span class="badge">Coming soon</span>
+        <span class="badge live">Available</span>
+        <a class="dl" href="https://apps.apple.com/app/earloop/id6835780528">Get it on the App Store ›</a>
       </div>
       <div class="qr-card">
         <img src="../assets/qr-android.png" alt="Android download QR code">
         <h3>Android</h3>
-        <p>Google Play</p>
-        <span class="badge">Coming soon</span>
+        <p>Direct APK download</p>
+        <span class="badge live">Available</span>
+        <a class="dl" href="../android/">Download APK ›</a>
       </div>
     </div>
   </div>
